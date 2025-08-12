@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Store — Template</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">
+        <a href="index.html" aria-label="Home"><div class="brand-mark">LOGO</div></a>
+      </div>
+
+      <div class="vehicle-select">
+        <label for="vehicle">Select Vehicle</label>
+        <select id="vehicle" name="vehicle">
+          <option value="">— Select —</option>
+          <option>Make • Model • Year</option>
+        </select>
+      </div>
+
+      <div class="search-wrap">
+        <input type="search" placeholder="Search products or part #" aria-label="Search" />
+        <button class="search-btn">Search</button>
+      </div>
+
+      <button id="mobile-toggle" class="mobile-toggle" aria-expanded="false">☰</button>
+    </div>
+
+    <nav class="main-nav" id="main-nav">
+      <ul class="nav-list">
+        <!-- Mega menu trigger items (categories) -->
+        <li class="nav-item has-mega">
+          <a href="#" class="nav-link">Shop by Category</a>
+          <div class="mega" aria-hidden="true">
+            <div class="mega-col">
+              <h4>Braking</h4>
+              <ul>
+                <li><a href="category.html">Brake Pads</a></li>
+                <li><a href="category.html">Rotors</a></li>
+                <li><a href="category.html">Brake Kits</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Engine & Drivetrain</h4>
+              <ul>
+                <li><a href="category.html">Turbo & Supercharger</a></li>
+                <li><a href="category.html">Clutches</a></li>
+                <li><a href="category.html">Gaskets & Seals</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Suspension & Steering</h4>
+              <ul>
+                <li><a href="category.html">Coilovers</a></li>
+                <li><a href="category.html">Control Arms</a></li>
+                <li><a href="category.html">Sway Bars</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Wheels & Tires</h4>
+              <ul>
+                <li><a href="category.html">Wheels</a></li>
+                <li><a href="category.html">Tires</a></li>
+                <li><a href="category.html">TPMS</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="category.html" class="nav-link">Exterior</a></li>
+        <li class="nav-item"><a href="category.html" class="nav-link">Interior</a></li>
+        <li class="nav-item"><a href="category.html" class="nav-link">Electrical</a></li>
+        <li class="nav-item"><a href="category.html" class="nav-link">Car Care</a></li>
+        <li class="nav-item"><a href="category.html" class="nav-link">Brands</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" class="account">Account</a>
+        <a href="#" class="cart">Cart (0)</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1><!-- intentionally blank --></h1>
+        <p class="callout">[Hero placeholder]</p>
+      </div>
+    </section>
+
+    <section class="featured-logos">
+      <h2 class="visually-hidden">Product Logos</h2>
+      <div class="logos-grid">
+        <!-- Replace these images with the product/brand logos you were asked to keep -->
+        <img src="assets/logo1-placeholder.png" alt="Brand 1 logo" />
+        <img src="assets/logo2-placeholder.png" alt="Brand 2 logo" />
+        <img src="assets/logo3-placeholder.png" alt="Brand 3 logo" />
+        <img src="assets/logo4-placeholder.png" alt="Brand 4 logo" />
+      </div>
+    </section>
+
+    <section class="category-teaser">
+      <h2><!-- blank on purpose --></h2>
+      <div class="grid">
+        <!-- product cards are empty placeholders -->
+        <article class="card">
+          <div class="card-image placeholder"></div>
+          <div class="card-body">
+            <div class="card-title"> </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image placeholder"></div>
+          <div class="card-body"></div>
+        </article>
+        <article class="card">
+          <div class="card-image placeholder"></div>
+          <div class="card-body"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional footer (only this will be 'real' content, per your instruction) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col logos-footer">
+        <h4>We stock</h4>
+        <div class="footer-logos">
+          <img src="assets/logo1-placeholder.png" alt="brand" />
+          <img src="assets/logo2-placeholder.png" alt="brand" />
+          <img src="assets/logo3-placeholder.png" alt="brand" />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© <span id="year"></span> Your Company. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
