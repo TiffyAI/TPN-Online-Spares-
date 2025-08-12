@@ -3,173 +3,203 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Store — Template</title>
+  <title>TPN — Online Store</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --accent: #0b5ed7;
+      --muted: #666;
+      --bg: #f7f7f8;
+      --max-width: 1200px;
+      font-family: Inter, system-ui, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: #fff; }
+    a { text-decoration: none; }
+
+    /* Header & Nav Dark Theme */
+    .site-header { background: #111; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+    .brand-mark { font-size: 1.5rem; font-weight: bold; color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; }
+
+    .main-nav { background: #111; }
+    .nav-list { list-style: none; display: flex; flex-wrap: wrap; }
+    .nav-item { position: relative; }
+    .nav-link { display: block; padding: 12px 16px; color: #fff; }
+    .nav-link:hover { background: #222; }
+
+    /* Mega Menu */
+    .mega { display: none; position: absolute; left: 0; top: 100%; background: #222; padding: 20px; width: 1000px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+    .mega-col { float: left; width: 25%; padding: 10px; }
+    .mega-col h4 { color: #fff; margin-bottom: 8px; }
+    .mega-col a { color: #ccc; display: block; padding: 4px 0; }
+    .mega-col a:hover { color: #fff; }
+
+    .nav-item:hover .mega { display: block; }
+
+    /* Footer */
+    .site-footer { background: #111; padding: 30px 20px; }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 24px; max-width: var(--max-width); margin: auto; }
+    .footer-col { flex: 1; min-width: 160px; }
+    .footer-col h4 { color: #fff; margin-bottom: 10px; }
+    .footer-col a { color: #ccc; }
+    .footer-col a:hover { color: #fff; }
+    .footer-logos img { height: 32px; margin-right: 8px; filter: brightness(0) invert(1); }
+    .footer-bottom { border-top: 1px solid #333; margin-top: 20px; padding-top: 10px; text-align: center; color: #777; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .mobile-toggle { display: block; }
+      .nav-list { display: none; flex-direction: column; }
+      .nav-list.open { display: flex; }
+      .mega { position: static; width: 100%; }
+      .mega-col { width: 50%; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="topbar">
-      <div class="brand">
-        <a href="index.html" aria-label="Home"><div class="brand-mark">LOGO</div></a>
-      </div>
 
-      <div class="vehicle-select">
-        <label for="vehicle">Select Vehicle</label>
-        <select id="vehicle" name="vehicle">
-          <option value="">— Select —</option>
-          <option>Make • Model • Year</option>
-        </select>
-      </div>
-
-      <div class="search-wrap">
-        <input type="search" placeholder="Search products or part #" aria-label="Search" />
-        <button class="search-btn">Search</button>
-      </div>
-
-      <button id="mobile-toggle" class="mobile-toggle" aria-expanded="false">☰</button>
-    </div>
-
-    <nav class="main-nav" id="main-nav">
-      <ul class="nav-list">
-        <!-- Mega menu trigger items (categories) -->
-        <li class="nav-item has-mega">
-          <a href="#" class="nav-link">Shop by Category</a>
-          <div class="mega" aria-hidden="true">
-            <div class="mega-col">
-              <h4>Braking</h4>
-              <ul>
-                <li><a href="category.html">Brake Pads</a></li>
-                <li><a href="category.html">Rotors</a></li>
-                <li><a href="category.html">Brake Kits</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h4>Engine & Drivetrain</h4>
-              <ul>
-                <li><a href="category.html">Turbo & Supercharger</a></li>
-                <li><a href="category.html">Clutches</a></li>
-                <li><a href="category.html">Gaskets & Seals</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h4>Suspension & Steering</h4>
-              <ul>
-                <li><a href="category.html">Coilovers</a></li>
-                <li><a href="category.html">Control Arms</a></li>
-                <li><a href="category.html">Sway Bars</a></li>
-              </ul>
-            </div>
-            <div class="mega-col">
-              <h4>Wheels & Tires</h4>
-              <ul>
-                <li><a href="category.html">Wheels</a></li>
-                <li><a href="category.html">Tires</a></li>
-                <li><a href="category.html">TPMS</a></li>
-              </ul>
-            </div>
+<header class="site-header">
+  <div class="topbar">
+    <div class="brand"><a href="index.html" class="brand-mark">TPN</a></div>
+    <button id="mobile-toggle" class="mobile-toggle" aria-expanded="false">☰</button>
+  </div>
+  <nav class="main-nav">
+    <ul class="nav-list" id="main-nav-list">
+      <li class="nav-item has-mega">
+        <a href="#" class="nav-link">Shop by Category</a>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Braking</h4>
+            <a href="#">Brake Pads</a>
+            <a href="#">Brake Rotors</a>
+            <a href="#">Brake Kits</a>
+            <a href="#">Brake Accessories</a>
           </div>
-        </li>
-
-        <li class="nav-item"><a href="category.html" class="nav-link">Exterior</a></li>
-        <li class="nav-item"><a href="category.html" class="nav-link">Interior</a></li>
-        <li class="nav-item"><a href="category.html" class="nav-link">Electrical</a></li>
-        <li class="nav-item"><a href="category.html" class="nav-link">Car Care</a></li>
-        <li class="nav-item"><a href="category.html" class="nav-link">Brands</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="#" class="account">Account</a>
-        <a href="#" class="cart">Cart (0)</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <h1><!-- intentionally blank --></h1>
-        <p class="callout">[Hero placeholder]</p>
-      </div>
-    </section>
-
-    <section class="featured-logos">
-      <h2 class="visually-hidden">Product Logos</h2>
-      <div class="logos-grid">
-        <!-- Replace these images with the product/brand logos you were asked to keep -->
-        <img src="assets/logo1-placeholder.png" alt="Brand 1 logo" />
-        <img src="assets/logo2-placeholder.png" alt="Brand 2 logo" />
-        <img src="assets/logo3-placeholder.png" alt="Brand 3 logo" />
-        <img src="assets/logo4-placeholder.png" alt="Brand 4 logo" />
-      </div>
-    </section>
-
-    <section class="category-teaser">
-      <h2><!-- blank on purpose --></h2>
-      <div class="grid">
-        <!-- product cards are empty placeholders -->
-        <article class="card">
-          <div class="card-image placeholder"></div>
-          <div class="card-body">
-            <div class="card-title"> </div>
+          <div class="mega-col">
+            <h4>Engine & Drivetrain</h4>
+            <a href="#">Air Intake</a>
+            <a href="#">Turbo & Supercharger</a>
+            <a href="#">Clutches</a>
+            <a href="#">Engine Mounts</a>
           </div>
-        </article>
-        <article class="card">
-          <div class="card-image placeholder"></div>
-          <div class="card-body"></div>
-        </article>
-        <article class="card">
-          <div class="card-image placeholder"></div>
-          <div class="card-body"></div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- Professional footer (only this will be 'real' content, per your instruction) -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Warranty</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col logos-footer">
-        <h4>We stock</h4>
-        <div class="footer-logos">
-          <img src="assets/logo1-placeholder.png" alt="brand" />
-          <img src="assets/logo2-placeholder.png" alt="brand" />
-          <img src="assets/logo3-placeholder.png" alt="brand" />
+          <div class="mega-col">
+            <h4>Suspension & Steering</h4>
+            <a href="#">Coilovers</a>
+            <a href="#">Control Arms</a>
+            <a href="#">Sway Bars</a>
+            <a href="#">Bushings</a>
+          </div>
+          <div class="mega-col">
+            <h4>Wheels & Tires</h4>
+            <a href="#">Wheels</a>
+            <a href="#">Tires</a>
+            <a href="#">TPMS</a>
+          </div>
+          <div class="mega-col">
+            <h4>Exterior</h4>
+            <a href="#">Body Kits</a>
+            <a href="#">Spoilers</a>
+            <a href="#">Grilles</a>
+          </div>
+          <div class="mega-col">
+            <h4>Interior</h4>
+            <a href="#">Floor Mats</a>
+            <a href="#">Seats</a>
+            <a href="#">Gauges</a>
+          </div>
+          <div class="mega-col">
+            <h4>Electrical</h4>
+            <a href="#">Batteries</a>
+            <a href="#">Lighting</a>
+            <a href="#">ECUs</a>
+          </div>
+          <div class="mega-col">
+            <h4>Car Care</h4>
+            <a href="#">Cleaning</a>
+            <a href="#">Polish & Wax</a>
+            <a href="#">Detailing</a>
+          </div>
         </div>
+      </li>
+      <li class="nav-item"><a href="#" class="nav-link">Brands</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Sale</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section style="padding:40px; text-align:center;">
+    <h1>Welcome to TPN</h1>
+    <p style="color:#ccc;">Your high-performance parts destination.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Company Info</h4>
+      <ul>
+        <li><a href="#">About TPN</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Service</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Order Status</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Technical Articles</a></li>
+        <li><a href="#">Installation Guides</a></li>
+        <li><a href="#">Warranty</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div class="footer-col logos-footer">
+      <h4>We Stock</h4>
+      <div class="footer-logos">
+        <img src="assets/logo1-placeholder.png" alt="Brand 1" />
+        <img src="assets/logo2-placeholder.png" alt="Brand 2" />
+        <img src="assets/logo3-placeholder.png" alt="Brand 3" />
       </div>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> TPN. All rights reserved.</small>
+  </div>
+</footer>
 
-    <div class="footer-bottom">
-      <small>© <span id="year"></span> Your Company. All rights reserved.</small>
-    </div>
-  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    var toggle = document.getElementById('mobile-toggle');
+    var navList = document.getElementById('main-nav-list');
+    if(toggle && navList){
+      toggle.addEventListener('click', function(){
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        navList.classList.toggle('open');
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  });
+</script>
 
-  <script src="main.js"></script>
 </body>
 </html>
