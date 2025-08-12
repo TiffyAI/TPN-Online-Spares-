@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Category — Template</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- (Reuse header/nav from index.html in your platform) -->
+  <header class="site-header">
+    <!-- condensed header for brevity -->
+    <div class="topbar">
+      <a href="index.html" class="brand-mark">LOGO</a>
+      <button id="mobile-toggle-2" class="mobile-toggle">☰</button>
+    </div>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a href="#">Shop by Category</a></li>
+        <li><a href="#">Exterior</a></li>
+        <li><a href="#">Interior</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">Home / Category</div>
+
+    <div class="category-header">
+      <h1><!-- intentionally blank title --></h1>
+      <div class="category-controls">
+        <label>
+          Sort:
+          <select>
+            <option>Default</option>
+            <option>Price Low → High</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <section class="product-grid">
+      <!-- grid of placeholder cards (replace with real product data) -->
+      <article class="product-card">
+        <div class="thumb placeholder"></div>
+        <div class="meta">
+          <div class="product-title"></div>
+          <div class="product-brand">
+            <img src="assets/logo1-placeholder.png" alt="brand" />
+          </div>
+          <div class="price"> </div>
+        </div>
+      </article>
+
+      <!-- duplicate as needed -->
+      <article class="product-card"><div class="thumb placeholder"></div></article>
+      <article class="product-card"><div class="thumb placeholder"></div></article>
+      <article class="product-card"><div class="thumb placeholder"></div></article>
+    </section>
+
+    <nav class="pagination">
+      <button disabled>Prev</button>
+      <button>1</button>
+      <button>2</button>
+      <button>Next</button>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <!-- same footer from index.html (professional footer content) -->
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col logos-footer">
+        <h4>We stock</h4>
+        <div class="footer-logos">
+          <img src="assets/logo1-placeholder.png" alt="brand" />
+          <img src="assets/logo2-placeholder.png" alt="brand" />
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="year-2"></span> Your Company</small>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
